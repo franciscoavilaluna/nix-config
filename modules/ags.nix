@@ -1,12 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    ags
-    typescript
-  ];
-
-  home.file.".config/ags" = {
-	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
-  };
+	home.packages = with pkgs; [
+		ags
+		typescript
+	];
+	xdg.configFile."ags" = {
+		source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ags";
+	};
 }
