@@ -18,5 +18,6 @@
 
 	home.file.".config/nvim" = {
 		source = config.lib.file.mkOutOfStoreSymlink /home/pacosmosis/dotfiles/nvim;
+        recursive = false;
 	};
 }

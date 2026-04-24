@@ -8,5 +8,6 @@
 
   home.file.".config/ags" = {
     source = config.lib.file.mkOutOfStoreSymlink /home/pacosmosis/dotfiles/ags;
+    recursive = false;
   };
 }
