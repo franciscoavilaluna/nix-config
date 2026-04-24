@@ -1,12 +1,10 @@
 { config, pkgs, ... }:
 
 {
-
 	imports = [
 		./modules/neovim.nix
-        ./modules/quickshell.nix
+		./modules/quickshell.nix
 	];
-
 	home.username = "pacosmosis";
 	home.homeDirectory = "/home/pacosmosis";
 	home.stateVersion = "25.11";
@@ -15,18 +13,15 @@
 		shellAliases = {
 			q = "exit";
 			la = "ls -la";
-            hp = "hyprland";
+			hp = "hyprland";
 		};
 	};
-    programs.firefox = {
-        enable = true;
-        configPath = "${config.xdg.configHome}/mozilla/firefox";
-    };
+	programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
 
-    home.packages = with pkgs; [
-        vim
-        fastfetch
-    ];
+	home.packages = with pkgs; [
+		vim
+		fastfetch
+	];
 
 	services.ssh-agent.enable = true;
 }

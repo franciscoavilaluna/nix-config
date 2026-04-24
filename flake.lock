@@ -13,6 +13,19 @@
         "type": "path"
       }
     },
+    "dotfiles-quickshell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777060906,
+        "narHash": "sha256-B492azzKxab7/Wl6YkDtCBHJGFX3xT4DXFed0HJCnVo=",
+        "path": "/home/pacosmosis/dotfiles/quickshell",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/pacosmosis/dotfiles/quickshell",
+        "type": "path"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -51,6 +64,7 @@
     "root": {
       "inputs": {
         "dotfiles-nvim": "dotfiles-nvim",
+        "dotfiles-quickshell": "dotfiles-quickshell",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
