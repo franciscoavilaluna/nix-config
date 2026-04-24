@@ -8,9 +8,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		dotfiles-nvim = { url = "path:/home/pacosmosis/dotfiles/nvim"; flake = false; };
-		dotfiles-ags = { url = "path:/home/pacosmosis/dotfiles/ags"; flake = false; };
 	};
-	outputs = { nixpkgs, home-manager, dotfiles-nvim, dotfiles-ags, ... }@inputs: {
+	outputs = { nixpkgs, home-manager, dotfiles-nvim, ... }@inputs: {
 		nixosConfigurations.keren = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
