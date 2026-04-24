@@ -12,6 +12,7 @@
         packages = with pkgs; [
           quickshell
           qt6.qttools
+          qt6.qtdeclarative
         ];
       };
     };
