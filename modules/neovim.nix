@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 	programs.neovim = {
@@ -15,10 +15,5 @@
 			fd
 		];
 	};
-	xdg.configFile."nvim" = {
-		source = builtins.path {
-			path = /home/pacosmosis/dotfiles/nvim;
-			name = "nvim-config";
-		};
-	};
+	xdg.configFile."nvim".source = inputs.dotfiles-nvim;
 }

@@ -1,15 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 	home.packages = with pkgs; [
 		ags
 		typescript
 	];
-
-	xdg.configFile."ags" = {
-		source = builtins.path {
-			path = /home/pacosmosis/dotfiles/ags;
-			name = "ags-config";
-		};
-	};
+	xdg.configFile."ags".source = inputs.dotfiles-ags;
 }

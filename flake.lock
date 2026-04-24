@@ -1,5 +1,31 @@
 {
   "nodes": {
+    "dotfiles-ags": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777012254,
+        "narHash": "sha256-5Ad5g6KrM4FXK5LZcb2+ANcn8RprLGO2zZC7MZW9CKE=",
+        "path": "/home/pacosmosis/dotfiles/ags",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/pacosmosis/dotfiles/ags",
+        "type": "path"
+      }
+    },
+    "dotfiles-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777011312,
+        "narHash": "sha256-qo6hn7Zl6tBlHABZ4eCijn7/8XnhWsvZjzj5PelQnR4=",
+        "path": "/home/pacosmosis/dotfiles/nvim",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/pacosmosis/dotfiles/nvim",
+        "type": "path"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -37,6 +63,8 @@
     },
     "root": {
       "inputs": {
+        "dotfiles-ags": "dotfiles-ags",
+        "dotfiles-nvim": "dotfiles-nvim",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

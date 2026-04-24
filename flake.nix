@@ -7,10 +7,13 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		dotfiles-nvim = { url = "path:/home/pacosmosis/dotfiles/nvim"; flake = false; };
+		dotfiles-ags = { url = "path:/home/pacosmosis/dotfiles/ags"; flake = false; };
 	};
-	outputs = { nixpkgs, home-manager, ... }: {
+	outputs = { nixpkgs, home-manager, dotfiles-nvim, dotfiles-ags, ... }@inputs: {
 		nixosConfigurations.keren = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
+			specialArgs = { inherit inputs; };
 			modules = [
 				./configuration.nix
 				home-manager.nixosModules.home-manager
@@ -20,6 +23,7 @@
 						useUserPackages = true;
 						users.pacosmosis = import ./home.nix;
 						backupFileExtension = "backup";
+						extraSpecialArgs = { inherit inputs; };
 					};
 				}
 			];
