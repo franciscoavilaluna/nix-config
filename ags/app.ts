@@ -1,19 +1,24 @@
 import { App, Astal, Gtk } from "astal/gtk3"
-import Hyprland from "gi://AstalHyprland"
 
-const hypr = Hyprland.get_default()
-
-const WindowList = () => {
-    const box = new Gtk.Box({ vertical: true })
-    
-    // Escucha eventos de Hyprland
-    hypr.connect("client-added", () => {
-        print("Nueva ventana abierta")
-    })
-
+// Una ventana que actúa como barra superior
+const Bar = (monitor: number) => {
     return new Astal.Window({
-        child: new Gtk.Label({ label: "Shell de Hyprland activo" })
+        monitor,
+        name: `bar-${monitor}`,
+        anchor: Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT | Astal.WindowAnchor.RIGHT,
+        exclusivity: Astal.Exclusivity.EXCLUSIVE,
+        child: new Gtk.CenterBox({
+            startWidget: new Gtk.Label({ label: "Mi Shell" }),
+            endWidget: new Gtk.Button({
+                label: "Salir",
+                onClicked: () => App.quit(),
+            }),
+        }),
     })
 }
 
-App.start({ main: () => WindowList() })
+App.start({
+    main: () => {
+        Bar(0) // Lanza la barra en el monitor 0
+    },
+})
