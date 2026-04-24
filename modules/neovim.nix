@@ -1,20 +1,23 @@
 { pkgs, ... }:
 
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
+	programs.neovim = {
+		enable = true;
+		defaultEditor = true;
+		viAlias = true;
+		vimAlias = true;
+		
+		withRuby = true;
+		withPython3 = true;
 
-    extraPackages = with pkgs; [
-      lua-language-server
-      fd
-    ];
-  };
+		extraPackages = with pkgs; [
+			lua-language-server
+			fd
+		];
+	};
 
-  home.file.".config/nvim" = {
-    source = ../nvim; 
-    recursive = true;
-  };
+	home.file.".config/nvim" = {
+		source = ../nvim; 
+		recursive = true;
+	};
 }
