@@ -24,6 +24,7 @@
 
     home.packages = with pkgs; [
         vim
+        fastfetch
     ];
 
 	services.ssh-agent.enable = true;

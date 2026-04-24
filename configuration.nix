@@ -38,6 +38,7 @@
 		wget
 		kitty
 		git
+        quickshell
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
