@@ -23,8 +23,6 @@
 
     home.packages = with pkgs; [
         vim
-        neovim
-        fd
     ];
 
 	services.ssh-agent.enable = true;
