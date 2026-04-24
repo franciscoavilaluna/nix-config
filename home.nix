@@ -7,7 +7,8 @@
 	programs.bash = {
 		enable = true;
 		shellAliases = {
-			btw = "echo i use nix, btw";
+			q = "exit";
+			la = "ls -la";
 		};
 	};
 	programs.firefox.enable = true;

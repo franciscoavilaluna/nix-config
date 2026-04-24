@@ -36,9 +36,10 @@
 
 	environment.systemPackages = with pkgs; [
 		vim
+		nvim
+		unzip
 		wget
 		kitty
-		waybar
 		git
 	];
 
