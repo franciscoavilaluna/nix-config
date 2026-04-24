@@ -27,5 +27,10 @@
         fastfetch
     ];
 
+    home.file.".config/quickshell" = {
+        source = ../quickshell;
+        recursive = true;
+    }
+
 	services.ssh-agent.enable = true;
 }
