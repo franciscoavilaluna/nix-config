@@ -8,7 +8,7 @@
 
 	xdg.configFile."ags" = {
 		source = builtins.path {
-			path = /home/pacosmosis/dotfiles/ags/;
+			path = /home/pacosmosis/dotfiles/ags;
 			name = "ags-config";
 		};
 	};
