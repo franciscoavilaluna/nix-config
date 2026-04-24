@@ -4,6 +4,7 @@
 
 	imports = [
 		./modules/neovim.nix
+        ./modules/ags.nix
 	];
 
 	home.username = "pacosmosis";
