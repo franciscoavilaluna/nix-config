@@ -5,7 +5,6 @@
 		ags
 		typescript
 	];
-	xdg.configFile."ags" = {
-		source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ags";
-	};
+
+	xdg.configFile."ags".source = ../ags;
 }
