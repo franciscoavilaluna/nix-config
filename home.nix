@@ -11,4 +11,5 @@
 		};
 	};
 	programs.firefox.enable = true;
+	services.ssh-agent.enable = true;
 }
