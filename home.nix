@@ -24,6 +24,10 @@
 
     home.packages = with pkgs; [
         vim
+        ags
+        nodejs_24
+        gobject-introspection
+        gtk3
     ];
 
 	services.ssh-agent.enable = true;
