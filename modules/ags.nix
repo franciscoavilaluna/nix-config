@@ -6,5 +6,10 @@
 		typescript
 	];
 
-	xdg.configFile."ags".source = ../ags;
+	xdg.configFile."ags" = {
+		source = builtins.path {
+			path = /home/pacosmosis/dotfiles/ags/;
+			name = "ags-config";
+		};
+	};
 }

@@ -15,5 +15,10 @@
 			fd
 		];
 	};
-	xdg.configFile."nvim".source = ../nvim;
+	xdg.configFile."nvim" = {
+		source = builtins.path {
+			path = /home/pacosmosis/dotfiles/nvim/;
+			name = "nvim-config";
+		};
+	};
 }
