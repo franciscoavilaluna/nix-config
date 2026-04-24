@@ -7,7 +7,6 @@
   ];
 
   home.file.".config/ags" = {
-    source = config.lib.file.mkOutOfStoreSymlink /home/pacosmosis/dotfiles/ags;
-    recursive = false;
+	source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
   };
 }
