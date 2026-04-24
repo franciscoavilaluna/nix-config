@@ -16,7 +16,7 @@
         configPath = "${config.xdg.configHome}/mozilla/firefox";
     };
 
-    home.packages with pkgs; [
+    home.packages = with pkgs; [
         vim
         neovim
         fd
