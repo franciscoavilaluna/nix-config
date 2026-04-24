@@ -8,7 +8,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         dotfiles-nvim = { url = "github:franciscoavilaluna/nvim"; flake = false; };
-        dotfiles-quickshell = { url = "path:/home/pacosmosis/dotfiles/quickshell"; flake = false; };
+        dotfiles-quickshell = { url = "github:franciscoavilaluna/quickshell"; flake = false; };
     };
 
     outputs = { self, nixpkgs, home-manager, dotfiles-nvim, dotfiles-quickshell, ... }@inputs: 
