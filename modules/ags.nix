@@ -5,5 +5,5 @@
 		ags
 		typescript
 	];
-	xdg.configFile."ags".source = ../ags;
+    xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink /home/pacosmosis/dotfiles/nix-config/ags;
 }
