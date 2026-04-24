@@ -3,8 +3,7 @@
 {
   home.packages = with pkgs; [
     ags
-    libdbusmenu-gtk3
-    gobject-introspection
+    typescript
   ];
 
   home.file.".config/ags" = {
