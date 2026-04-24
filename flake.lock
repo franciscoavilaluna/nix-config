@@ -19,14 +19,17 @@
     "dotfiles-quickshell": {
       "flake": false,
       "locked": {
-        "lastModified": 1777060906,
+        "lastModified": 1777065420,
         "narHash": "sha256-B492azzKxab7/Wl6YkDtCBHJGFX3xT4DXFed0HJCnVo=",
-        "path": "/home/pacosmosis/dotfiles/quickshell",
-        "type": "path"
+        "owner": "franciscoavilaluna",
+        "repo": "quickshell",
+        "rev": "b84893ee0314366ee4a88fe254a1a76ec983ca29",
+        "type": "github"
       },
       "original": {
-        "path": "/home/pacosmosis/dotfiles/quickshell",
-        "type": "path"
+        "owner": "franciscoavilaluna",
+        "repo": "quickshell",
+        "type": "github"
       }
     },
     "home-manager": {
