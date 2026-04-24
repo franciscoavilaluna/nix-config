@@ -7,7 +7,7 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        dotfiles-nvim = { url = "path:/home/pacosmosis/dotfiles/nvim"; flake = false; };
+        dotfiles-nvim = { url = "github:franciscoavilaluna/nvim"; flake = false; };
         dotfiles-quickshell = { url = "path:/home/pacosmosis/dotfiles/quickshell"; flake = false; };
     };
 

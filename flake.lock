@@ -3,14 +3,17 @@
     "dotfiles-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1777011312,
-        "narHash": "sha256-qo6hn7Zl6tBlHABZ4eCijn7/8XnhWsvZjzj5PelQnR4=",
-        "path": "/home/pacosmosis/dotfiles/nvim",
-        "type": "path"
+        "lastModified": 1777064641,
+        "narHash": "sha256-hUahL1pYYacMK3n+KAWHdf65ip3Tcv3P25y28AKSv50=",
+        "owner": "franciscoavilaluna",
+        "repo": "nvim",
+        "rev": "ee3a1ae6487f0793c79624e8a1e3c78773938db4",
+        "type": "github"
       },
       "original": {
-        "path": "/home/pacosmosis/dotfiles/nvim",
-        "type": "path"
+        "owner": "franciscoavilaluna",
+        "repo": "nvim",
+        "type": "github"
       }
     },
     "dotfiles-quickshell": {
