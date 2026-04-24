@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+	imports = [
+		./modules/neovim.nix
+	];
+
 	home.username = "pacosmosis";
 	home.homeDirectory = "/home/pacosmosis";
 	home.stateVersion = "25.11";
