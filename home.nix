@@ -11,6 +11,16 @@
 			la = "ls -la";
 		};
 	};
-	programs.firefox.enable = true;
+    programs.firefox = {
+        enable = true;
+        configPath = "${config.xdg.configHome}/mozilla/firefox";
+    };
+
+    home.packages with pkgs; [
+        vim
+        neovim
+        fd
+    ];
+
 	services.ssh-agent.enable = true;
 }

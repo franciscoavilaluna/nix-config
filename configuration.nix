@@ -35,8 +35,6 @@
 
 
 	environment.systemPackages = with pkgs; [
-		vim
-		neovim
 		unzip
 		wget
 		kitty
