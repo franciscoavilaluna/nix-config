@@ -33,7 +33,6 @@
 		extraGroups = [ "wheel" ];
 	};
 
-
 	environment.systemPackages = with pkgs; [
 		unzip
 		wget

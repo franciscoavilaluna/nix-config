@@ -4,7 +4,6 @@
 
 	imports = [
 		./modules/neovim.nix
-        ./modules/ags.nix
 	];
 
 	home.username = "pacosmosis";
@@ -15,6 +14,7 @@
 		shellAliases = {
 			q = "exit";
 			la = "ls -la";
+            hp = "hyprland";
 		};
 	};
     programs.firefox = {
