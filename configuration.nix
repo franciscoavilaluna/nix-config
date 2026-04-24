@@ -34,11 +34,11 @@
 	};
 
 	environment.systemPackages = with pkgs; [
+        pkgs.home-manager
 		unzip
 		wget
 		kitty
 		git
-        quickshell
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -4,6 +4,7 @@
 
 	imports = [
 		./modules/neovim.nix
+        ./modules/quickshell.nix
 	];
 
 	home.username = "pacosmosis";
@@ -26,11 +27,6 @@
         vim
         fastfetch
     ];
-
-    home.file.".config/quickshell" = {
-        source = ./quickshell;
-        recursive = true;
-    };
 
 	services.ssh-agent.enable = true;
 }

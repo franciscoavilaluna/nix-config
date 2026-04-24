@@ -12,7 +12,6 @@
 
 		extraPackages = with pkgs; [
 			lua-language-server
-            nixfmt-rfc-style
 			fd
 		];
 	};

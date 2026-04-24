@@ -8,9 +8,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         dotfiles-nvim = { url = "path:/home/pacosmosis/dotfiles/nvim"; flake = false; };
+        dotfiles-quickshell = { url = "path:/home/pacosmosis/dotfiles/quickshell"; flake = false; };
     };
 
-    outputs = { self, nixpkgs, home-manager, dotfiles-nvim, ... }@inputs: 
+    outputs = { self, nixpkgs, home-manager, dotfiles-nvim, dotfiles-quickshell, ... }@inputs: 
     let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
