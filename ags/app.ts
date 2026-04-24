@@ -1,27 +1,19 @@
-import { App, Astal, Gtk, Gdk } from "astal/gtk3"
+import { App, Astal, Gtk } from "astal/gtk3"
+import Hyprland from "gi://AstalHyprland"
 
-// Creamos una ventana simple
-const MyWindow = () => {
+const hypr = Hyprland.get_default()
+
+const WindowList = () => {
+    const box = new Gtk.Box({ vertical: true })
+    
+    // Escucha eventos de Hyprland
+    hypr.connect("client-added", () => {
+        print("Nueva ventana abierta")
+    })
+
     return new Astal.Window({
-        name: "test-window",
-        anchor: Astal.WindowAnchor.TOP | Astal.WindowAnchor.LEFT,
-        exclusivity: Astal.Exclusivity.NORMAL,
-        child: new Gtk.Button({
-            label: "¡Hola NixOS! Clic aquí para salir",
-            onClicked: () => App.quit(),
-            halign: Gtk.Align.CENTER,
-            valign: Gtk.Align.CENTER,
-        }),
+        child: new Gtk.Label({ label: "Shell de Hyprland activo" })
     })
 }
 
-// Inicializamos la aplicación
-App.start({
-    requestHandler: (request, res) => {
-        print(`Recibí: ${request}`)
-        res("¡Recibido!")
-    },
-    main: () => {
-        MyWindow()
-    },
-})
+App.start({ main: () => WindowList() })
