@@ -39,6 +39,15 @@
 		wget
 		kitty
 		git
+        libsecret
+	hyprshot
+	feh
+	guvcview
+        mariadb
+        postgresql
+        sqlite
+        serve
+        xdg-utils
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];

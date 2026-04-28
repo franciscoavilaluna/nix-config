@@ -1,37 +1,5 @@
 {
   "nodes": {
-    "dotfiles-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1777064641,
-        "narHash": "sha256-hUahL1pYYacMK3n+KAWHdf65ip3Tcv3P25y28AKSv50=",
-        "owner": "franciscoavilaluna",
-        "repo": "nvim",
-        "rev": "ee3a1ae6487f0793c79624e8a1e3c78773938db4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "franciscoavilaluna",
-        "repo": "nvim",
-        "type": "github"
-      }
-    },
-    "dotfiles-quickshell": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1777065420,
-        "narHash": "sha256-B492azzKxab7/Wl6YkDtCBHJGFX3xT4DXFed0HJCnVo=",
-        "owner": "franciscoavilaluna",
-        "repo": "quickshell",
-        "rev": "b84893ee0314366ee4a88fe254a1a76ec983ca29",
-        "type": "github"
-      },
-      "original": {
-        "owner": "franciscoavilaluna",
-        "repo": "quickshell",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -69,8 +37,6 @@
     },
     "root": {
       "inputs": {
-        "dotfiles-nvim": "dotfiles-nvim",
-        "dotfiles-quickshell": "dotfiles-quickshell",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
