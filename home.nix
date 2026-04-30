@@ -28,7 +28,6 @@
         };
     };
 
-
     dconf = {
         enable = true;
         settings = {
@@ -55,7 +54,6 @@
         XCURSOR_SIZE = "24";
     };
 
-
 	programs.bash = {
 		enable = true;
 		shellAliases = {
@@ -81,6 +79,7 @@
 	home.packages = with pkgs; [
 		vim
 		fastfetch
+        cloudflared
         quickshell
         tree
         kitty

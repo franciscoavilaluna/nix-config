@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "dotfiles-tmux": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1748484639,
+        "narHash": "sha256-WvkSfbMXP77sB+sRlc00q9RnbVrzAC/lUH6Y9OwEJH8=",
+        "owner": "franciscoavilaluna",
+        "repo": "tmux",
+        "rev": "77858749282d84a916774f1846dfd3c8f4b884e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "franciscoavilaluna",
+        "repo": "tmux",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -54,6 +70,7 @@
     "root": {
       "inputs": {
         "dotfiles-nvim": "dotfiles-nvim",
+        "dotfiles-tmux": "dotfiles-tmux",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

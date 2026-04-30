@@ -3,7 +3,7 @@
 {
   programs.tmux = {
     enable = true;
-    shortcut = "t"; 
+    shortcut = "b"; 
     terminal = "xterm-256color";
     baseIndex = 1;
     escapeTime = 0;
