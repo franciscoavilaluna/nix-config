@@ -19,11 +19,11 @@
     "dotfiles-tmux": {
       "flake": false,
       "locked": {
-        "lastModified": 1748484639,
-        "narHash": "sha256-WvkSfbMXP77sB+sRlc00q9RnbVrzAC/lUH6Y9OwEJH8=",
+        "lastModified": 1777582504,
+        "narHash": "sha256-UnQpKvqoccFLgJyBSylic+y1ZvZJC0dxq7BwtziLtBc=",
         "owner": "franciscoavilaluna",
         "repo": "tmux",
-        "rev": "77858749282d84a916774f1846dfd3c8f4b884e0",
+        "rev": "2ed98caae48db354d56c67a58032f2192671174d",
         "type": "github"
       },
       "original": {

@@ -54,6 +54,7 @@
         sqlite
         serve
         xdg-utils
+        psmisc
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
