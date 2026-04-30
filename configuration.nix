@@ -42,7 +42,6 @@
 		extraGroups = [ "wheel" "input" "video" "networkmanager" ];
 	};
 
-
 	environment.systemPackages = with pkgs; [
         pkgs.home-manager
 		unzip
@@ -51,6 +50,7 @@
         libsecret
         mariadb
         postgresql
+        php
         sqlite
         serve
         xdg-utils

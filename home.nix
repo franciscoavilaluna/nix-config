@@ -3,7 +3,7 @@
 {
 	imports = [
 		./modules/neovim.nix
-		#./modules/quickshell.nix
+		./modules/tmux.nix
 	];
 	home.username = "pacosmosis";
 	home.homeDirectory = "/home/pacosmosis";

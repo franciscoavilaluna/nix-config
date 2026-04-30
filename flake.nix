@@ -8,10 +8,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         dotfiles-nvim = { url = "github:franciscoavilaluna/nvim"; flake = false; };
+        dotfiles-tmux = { url = "github:franciscoavilaluna/tmux"; flake = false; };
         #dotfiles-quickshell = { url = "github:franciscoavilaluna/quickshell"; flake = false; };
     };
 
-    outputs = { self, nixpkgs, home-manager, dotfiles-nvim, /*dotfiles-quickshell,*/ ... }@inputs: 
+    outputs = { self, nixpkgs, home-manager, dotfiles-nvim, dotfiles-tmux, ... }@inputs: 
     let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
