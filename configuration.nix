@@ -25,24 +25,30 @@
 		enable = true;
 		pulse.enable = true;
 	};
-
+	services.mysql = {
+		enable = true;
+		package = pkgs.mariadb;
+	};
+    services.postgresql = {
+        enable = false;
+        enableTCPIP = false;
+        package = pkgs.postgresql_15;
+    };
 	services.libinput.enable = true;
+    services.gnome.gnome-keyring.enable = true;
 
 	users.users.pacosmosis = {
 		isNormalUser = true;
-		extraGroups = [ "wheel" ];
+		extraGroups = [ "wheel" "input" "video" "networkmanager" ];
 	};
+
 
 	environment.systemPackages = with pkgs; [
         pkgs.home-manager
 		unzip
 		wget
-		kitty
 		git
         libsecret
-	hyprshot
-	feh
-	guvcview
         mariadb
         postgresql
         sqlite
@@ -51,6 +57,8 @@
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    security.pam.services.login.enableGnomeKeyring = true;
 
 	system.stateVersion = "25.11"; # <- Never change it OnO
 }

@@ -7,11 +7,11 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        #dotfiles-nvim = { url = "github:franciscoavilaluna/nvim"; flake = false; };
+        dotfiles-nvim = { url = "github:franciscoavilaluna/nvim"; flake = false; };
         #dotfiles-quickshell = { url = "github:franciscoavilaluna/quickshell"; flake = false; };
     };
 
-    outputs = { self, nixpkgs, home-manager, /*dotfiles-nvim, dotfiles-quickshell,*/ ... }@inputs: 
+    outputs = { self, nixpkgs, home-manager, dotfiles-nvim, /*dotfiles-quickshell,*/ ... }@inputs: 
     let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
