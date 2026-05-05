@@ -83,7 +83,6 @@
         quickshell
         tree
         kitty
-        hyprshot
         feh
         guvcview
         nerd-fonts.blex-mono

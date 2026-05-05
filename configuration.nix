@@ -6,15 +6,27 @@
 		./hardware-configuration.nix
 	];
 
+    xdg.portal = {
+        enable = true;
+        extraPortals = [
+            pkgs.xdg-desktop-portal-hyprland
+            pkgs.xdg-desktop-portal-gtk
+        ];
+        config.common.default = "*";
+    };
+
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
+    boot.supportedFilesystems = [ "exfat" "ntfs" ];
+
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.powerOnBoot = true;
 
 	networking.hostName = "keren";
 
 	networking.networkmanager.enable = true;
 
 	time.timeZone = "America/Mexico_City";
-	services.printing.enable = true;
 
 	programs.hyprland = {
 		enable = true;
@@ -34,6 +46,8 @@
         enableTCPIP = false;
         package = pkgs.postgresql_15;
     };
+
+    services.printing.enable = true;
 	services.libinput.enable = true;
     services.gnome.gnome-keyring.enable = true;
 
@@ -54,6 +68,7 @@
         sqlite
         serve
         xdg-utils
+        hyprshot
         psmisc
 	];
 
