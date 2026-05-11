@@ -86,6 +86,8 @@
         feh
         guvcview
         nerd-fonts.blex-mono
+
+        obs-studio
 	];
 
 	services.ssh-agent.enable = true;

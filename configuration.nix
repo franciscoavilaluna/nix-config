@@ -15,12 +15,19 @@
         config.common.default = "*";
     };
 
+    nixpkgs.config.allowUnfree = true;
+
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
     boot.supportedFilesystems = [ "exfat" "ntfs" ];
 
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
+
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
 
 	networking.hostName = "keren";
 
@@ -32,6 +39,15 @@
 		enable = true;
 		xwayland.enable = true;
 	};
+
+    programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        localNetworkGameTransfers.openFirewall = true;
+    };
+
+    programs.gamemode.enable = true;
 
 	services.pipewire = {
 		enable = true;
@@ -70,6 +86,17 @@
         xdg-utils
         hyprshot
         psmisc
+        protonup-qt
+        
+        kdePackages.kdenlive
+        kdePackages.qtwayland
+        kdePackages.kio-extras
+        glib
+        vlc
+
+        ipe
+        texlive.combined.scheme-full
+        zathura
 	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
