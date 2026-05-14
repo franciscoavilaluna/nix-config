@@ -16,6 +16,13 @@
     };
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [
+        (final: prev: {
+            openldap = prev.openldap.overrideAttrs (old: {
+                doCheck = false;
+            });
+        })
+    ];
 
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
@@ -23,14 +30,16 @@
 
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
-
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
+        extraPackages = with pkgs; [
+            intel-media-driver
+            libva-utils
+        ];
     };
 
 	networking.hostName = "keren";
-
 	networking.networkmanager.enable = true;
 
 	time.timeZone = "America/Mexico_City";
@@ -40,18 +49,13 @@
 		xwayland.enable = true;
 	};
 
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        localNetworkGameTransfers.openFirewall = true;
-    };
-
-    programs.gamemode.enable = true;
-
+    security.rtkit.enable = true;
 	services.pipewire = {
 		enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
 		pulse.enable = true;
+        jack.enable = true;
 	};
 	services.mysql = {
 		enable = true;
@@ -62,7 +66,6 @@
         enableTCPIP = false;
         package = pkgs.postgresql_15;
     };
-
     services.printing.enable = true;
 	services.libinput.enable = true;
     services.gnome.gnome-keyring.enable = true;
@@ -73,35 +76,26 @@
 	};
 
 	environment.systemPackages = with pkgs; [
-        pkgs.home-manager
-		unzip
-		wget
-		git
-        libsecret
-        mariadb
-        postgresql
-        php
-        sqlite
-        serve
-        xdg-utils
-        hyprshot
+        git
+        wget
+        unzip
         psmisc
-        protonup-qt
-        
-        kdePackages.kdenlive
-        kdePackages.qtwayland
-        kdePackages.kio-extras
-        glib
-        vlc
-
-        ipe
-        texlive.combined.scheme-full
-        zathura
+        blueman
+        xdg-utils
+        libsecret
+        brightnessctl
+        #pkgs.home-manager
 	];
+
+    environment.sessionVariables = {
+        QT_QPA_PLATFORM = "wayland;xcb";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        LIBVA_DRIVER_NAME = "iHD";
+    };
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     security.pam.services.login.enableGnomeKeyring = true;
 
-	system.stateVersion = "25.11"; # <- Never change it OnO
+	system.stateVersion = "25.11"; # <- Never change it!
 }

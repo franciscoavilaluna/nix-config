@@ -60,6 +60,11 @@
 			q = "exit";
 			la = "ls -la";
 			hp = "start-hyprland";
+            t = "tmux";
+            ta = "tmux a";
+            td = "tmux detach";
+            f = "yazi";
+            nrsf = "sudo nixos-rebuild switch --flake .";
 		};
 	};
 
@@ -76,18 +81,88 @@
         };
     };
 
+    programs.fuzzel = {
+        enable = true;
+        settings = {
+            main = {
+                font = "BlexMono Nerd Font:size=8";
+                layer = "overlay";
+                width = 30;
+                lines = 10;
+                line-height = 10;
+                horizontal-pad = 10;
+                vertical-pad = 10;
+                inner-pad = 0;
+                show-actions = false;
+                icon-theme = "none";
+                icons-enabled = "no";
+            };
+            colors = {
+                background = "000000ff";
+                text = "cececeff";
+                match = "ffffffff";
+                selection = "333333ff";
+                selection-text = "ffffffff";
+                border = "333333ff";
+            };
+            border = {
+                width = 1;
+                radius = 0;
+            };
+        };
+    };
+
+    programs.yazi = {
+        enable = true;
+        shellWrapperName = "y";
+
+        settings = {
+            manager = {
+                show_hidden = true;
+                sort_by = "alphabetical";
+                sort_dir_first = true;
+                ratio = [ 1 2 4 ];
+            };
+            preview = {
+                enabled = true;
+                wrap = "yes";
+                image_filter = "lanczos3"; 
+                image_quality = 75; 
+            };
+        };
+
+        keymap = {
+            manager.prepend_keymap = [ { on = [ "q" ]; run = "quit"; desc = "Leave"; } ];
+        };
+    };
+
 	home.packages = with pkgs; [
-		vim
-		fastfetch
+        texlive.combined.scheme-full
+        nerd-fonts.blex-mono
+        wl-clipboard
         cloudflared
         quickshell
-        tree
-        kitty
-        feh
+        fastfetch
         guvcview
-        nerd-fonts.blex-mono
+        inkscape
+        hyprshot
+        python3
+        mariadb
+        zathura
+        fuzzel
+        sqlite
+        wtype
+        kitty
+        serve
+        tree
+        yazi
+        feh
+        php
+        vlc
 
+        protonup-qt
         obs-studio
+        bottles
 	];
 
 	services.ssh-agent.enable = true;
